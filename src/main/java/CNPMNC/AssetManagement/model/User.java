@@ -1,4 +1,4 @@
-package CNPMNC.AssetManagement.User;
+package CNPMNC.AssetManagement.model;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -18,6 +18,9 @@ public class User {
   private String password;
 
   private Integer departmentId;
+
+  public User() {
+  }
 
   public User(String username, String password, Integer departmentId) {
     this.username = username;

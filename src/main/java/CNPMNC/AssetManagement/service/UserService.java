@@ -1,8 +1,11 @@
-package CNPMNC.AssetManagement.User;
+package CNPMNC.AssetManagement.service;
 
 import java.util.List;
 
 import org.springframework.stereotype.Service;
+
+import CNPMNC.AssetManagement.model.User;
+import CNPMNC.AssetManagement.repository.UserRepository;
 
 @Service
 public class UserService {

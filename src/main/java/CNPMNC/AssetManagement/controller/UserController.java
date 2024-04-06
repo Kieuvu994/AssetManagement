@@ -1,4 +1,4 @@
-package CNPMNC.AssetManagement.User;
+package CNPMNC.AssetManagement.controller;
 
 import java.util.List;
 
@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import CNPMNC.AssetManagement.model.User;
+import CNPMNC.AssetManagement.service.UserService;
 import lombok.NonNull;
 
 @RestController
