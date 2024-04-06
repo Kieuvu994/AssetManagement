@@ -1,21 +1,18 @@
 package CNPMNC.AssetManagement;
 
+import org.modelmapper.ModelMapper;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.context.annotation.Bean;
 
-@RestController
+
 @SpringBootApplication
 public class AssetManagementApplication {
-
-  public static void main(String[] args) {
-    SpringApplication.run(AssetManagementApplication.class, args);
-  }
-
-  @GetMapping("help")
-  public String help() {
-    return "i can see you.";
-  }
-
+	public static void main(String[] args) {
+		SpringApplication.run(AssetManagementApplication.class, args);
+	}
+	@Bean
+	public ModelMapper getModelMapper() {
+		return new ModelMapper();
+	}
 }
