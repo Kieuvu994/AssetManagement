@@ -8,9 +8,9 @@ spring:
   application:
     name: AssetManagement
   datasource:
-    url: jdbc:mariadb://localhost:3307/asset
+    url: jdbc:mariadb://localhost:3306/asm
     username: root
-    password: 123456
+    password: 12345
     driver-class-name: org.mariadb.jdbc.Driver
   jpa:
     hibernate:
