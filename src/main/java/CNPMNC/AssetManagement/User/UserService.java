@@ -26,8 +26,9 @@ public class UserService {
   public User editUser(User newUser, Integer id) {
     return repository.findById(id)
         .map(user -> {
-          user.setName(newUser.getName());
-          user.setEmail(newUser.getEmail());
+          user.setUsername(newUser.getUsername());
+          user.setPassword(newUser.getPassword());
+          user.setDepartmentId(newUser.getDepartmentId());
           return repository.save(user);
         })
         .orElseGet(() -> {
