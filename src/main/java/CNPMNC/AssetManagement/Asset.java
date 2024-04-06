@@ -1,18 +1,12 @@
 package CNPMNC.AssetManagement;
-import org.hibernate.annotations.GenericGenerator;
-
-import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 @Entity
 public class Asset {
     
 enum Status{Available,BeingUsed,Missing,Broken};
     @Id
-    @GenericGenerator(name = "id", strategy = "CNPMNC.AssetManagement.AssetIdGenerator")
-    @GeneratedValue(generator = "id")  
-    @Column(name="id")
+ 
     private String id;
     private String name;
     private Status state;
