@@ -23,9 +23,9 @@ public class AssetController {
     }
 
     @GetMapping("{id}")
+    @ResponseStatus(HttpStatus.OK)
     public AssetDTO getById(@PathVariable long id) {
-        AssetDTO assetDTO = assetService.getById(id);
-        return assetDTO;
+        return assetService.getById(id);
     }
 
     @PostMapping

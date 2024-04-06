@@ -1,5 +1,6 @@
 package CNPMNC.AssetManagement.model;
 
+import CNPMNC.AssetManagement.enums.AssetStatus;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -20,5 +21,5 @@ public class Asset {
     private String name;
 
     @Column(name="status")
-    private String status;
+    private AssetStatus status;
 }
