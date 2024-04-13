@@ -3,6 +3,7 @@ package CNPMNC.AssetManagement.service;
 import java.util.List;
 
 import org.springframework.stereotype.Service;
+import org.springframework.util.DigestUtils;
 
 import CNPMNC.AssetManagement.model.User;
 import CNPMNC.AssetManagement.repository.UserRepository;
