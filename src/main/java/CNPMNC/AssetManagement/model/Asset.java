@@ -1,7 +1,10 @@
 package CNPMNC.AssetManagement.model;
 
 import CNPMNC.AssetManagement.enums.AssetStatus;
-import jakarta.persistence.*;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.Id;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -22,7 +25,6 @@ public class Asset {
 
     @Column(name="status")
     private AssetStatus status;
-    
     @Column(name="dep_id")
-    private Integer dep_id;
+    private int DepartmentId;
 }
