@@ -1,43 +1,52 @@
-package CNPMNC.AssetManagement.service;
+package CNPMNC.AssetManagement.controller;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseStatus;
+import org.springframework.web.bind.annotation.RestController;
 
 import CNPMNC.AssetManagement.dto.AssetDTO;
 import CNPMNC.AssetManagement.model.Asset;
-import CNPMNC.AssetManagement.repository.AssetRepository;
+import CNPMNC.AssetManagement.service.AssetService;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Optional;
-
-import org.modelmapper.ModelMapper;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
-
-
-@Service
-public class AssetService {
+@RestController
+@RequestMapping("/assets")
+public class AssetController {
     @Autowired
-    private AssetRepository assetRepository;
+    private AssetService assetService;
 
-    @Autowired
-    private ModelMapper modelMapper;
-
-    public List<AssetDTO> getAll() {
-        Iterable<Asset> assets = assetRepository.findAll();
-        List<AssetDTO> assetDTOs = new ArrayList<AssetDTO>();
-        assets.forEach((asset) -> {
-            assetDTOs.add(modelMapper.map(asset, AssetDTO.class));
-        });
+    @GetMapping
+    @ResponseStatus(HttpStatus.OK)
+    public List<AssetDTO> getAll(){
+        List<AssetDTO> assetDTOs = assetService.getAll();
         return assetDTOs;
     }
 
-    public AssetDTO createAsset(AssetDTO assetDTO) {
-        
-        Asset asset = assetRepository.save(modelMapper.map(assetDTO, Asset.class));
-        return modelMapper.map(asset, AssetDTO.class);
+    @GetMapping("{id}")
+    @ResponseStatus(HttpStatus.OK)
+    public AssetDTO getById(@PathVariable long id) {
+        return assetService.getById(id);
     }
 
-    public AssetDTO getById(long id) {
-        Optional<Asset> asset = assetRepository.findById(id);
-        return modelMapper.map(asset, AssetDTO.class);
+    @PostMapping
+    @ResponseStatus(HttpStatus.CREATED)
+    public AssetDTO createAsset(@RequestBody AssetDTO assetDTO) {
+     
+        return assetService.createAsset(assetDTO);
     }
+    
+    @PostMapping("/update/{id}")
+    @ResponseStatus(HttpStatus.OK)
+   public Asset editAsset(@RequestBody Asset Asset, @PathVariable Long id) {
+    
+      return assetService.editAsset(Asset, id);
+    }
+    
 }
