@@ -1,5 +1,4 @@
 package CNPMNC.AssetManagement.dto;
-
 import CNPMNC.AssetManagement.enums.AssetStatus;
 import lombok.Data;
 
@@ -8,5 +7,5 @@ public class AssetDTO {
     private long id = -1;
     private String name;
     private AssetStatus status = AssetStatus.Available;
-    private Integer dep_id;
+    private  int DepartmentId = -1 ;
 }
