@@ -22,4 +22,7 @@ public class Asset {
 
     @Column(name="status")
     private AssetStatus status;
+    
+    @Column(name="dep_id")
+    private Integer dep_id;
 }

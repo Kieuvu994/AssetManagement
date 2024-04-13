@@ -8,4 +8,5 @@ public class AssetDTO {
     private long id = -1;
     private String name;
     private AssetStatus status = AssetStatus.Available;
+    private Integer dep_id;
 }
