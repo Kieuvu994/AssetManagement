@@ -1,22 +1,22 @@
 server:
-  tomcat:
-    max-swallow-size : 100MB
-  port: 8081
-  servlet:
-      context-path: /api/v1/
+    tomcat:
+        max-swallow-size: 100MB
+    port: 8081
+    servlet:
+        context-path: /api/v1/
 spring:
-  application:
-    name: AssetManagement
-  datasource:
-    url: jdbc:mariadb://localhost:3306/asset
-    username: root
-    password: root
-    driver-class-name: org.mariadb.jdbc.Driver
-  jpa:
-    hibernate:
-      ddl-auto: update
-    show-sql: true
-    properties:
-      hibernate:
-        format_sql: true
-    database: mysql
+    application:
+        name: AssetManagement
+    datasource:
+        url: jdbc:mariadb://localhost:3306/asset
+        username: root
+        password: root
+        driver-class-name: org.mariadb.jdbc.Driver
+    jpa:
+        hibernate:
+            ddl-auto: update
+        show-sql: true
+        properties:
+            hibernate:
+                format_sql: true
+        database: mysql

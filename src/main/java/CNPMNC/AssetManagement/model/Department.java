@@ -1,19 +1,17 @@
-package CNPMNC.AssetManagement.User;
+package CNPMNC.AssetManagement.model;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 
 @Entity // This tells Hibernate to make a table out of this class
-public class User {
+@Table(name = "tb_department")
+public class Department {
   @Id
-  @GeneratedValue(strategy=GenerationType.AUTO)
+  @GeneratedValue(strategy = GenerationType.AUTO)
   private Integer id;
-
-  private String name;
-
-  private String email;
 
   public Integer getId() {
     return id;
@@ -23,6 +21,8 @@ public class User {
     this.id = id;
   }
 
+  private String name;
+
   public String getName() {
     return name;
   }
@@ -30,13 +30,4 @@ public class User {
   public void setName(String name) {
     this.name = name;
   }
-
-  public String getEmail() {
-    return email;
-  }
-
-  public void setEmail(String email) {
-    this.email = email;
-  }
 }
-
